@@ -91,7 +91,6 @@ test('Deleting the last inventory item', (assert) => {
   });
 });
 
-// adding comment to trigger a new build
 test('Search for inventory item', (assert) => {
   runWithPouchDump('inventory', function() {
     authenticateUser();
@@ -99,6 +98,7 @@ test('Search for inventory item', (assert) => {
 
     andThen(function() {
       assert.equal(currentURL(), 'inventory/search/123');
+    });
   });
 });
 
