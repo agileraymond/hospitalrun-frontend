@@ -91,6 +91,16 @@ test('Deleting the last inventory item', (assert) => {
   });
 });
 
+test('Search for inventory item', (assert) => {
+  runWithPouchDump('inventory', function() {
+    authenticateUser();
+    visit('inventory/search/123');
+
+    andThen(function() {
+      assert.equal(currentURL(), 'inventory/search/123');
+  });
+});
+
 test('Creating a new inventory request', function(assert) {
   runWithPouchDump('inventory', function() {
     authenticateUser();
