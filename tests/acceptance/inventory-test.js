@@ -91,6 +91,7 @@ test('Deleting the last inventory item', (assert) => {
   });
 });
 
+// adding comment to trigger a new build
 test('Search for inventory item', (assert) => {
   runWithPouchDump('inventory', function() {
     authenticateUser();
